@@ -23,7 +23,7 @@ print(f'found {len(list(result))} results, the first item is \n{next(iter(result
 ```
 
     found 455 results, the first item is 
-    {'pr_country_en': 'Thailand', 'psqty': '1.0', 'ordertype': 'Y', 'pstype': '1', 'pr_abb': 'BANANA', 'pr_puqty': '1.0', 'pr_engname': 'BANANA', 'pr_name': 'BANANA', 'pr_dpcode': '19', 'pr_keyword_en': 'banana,bananas,Cavendish Banana,Cavendish,,Fresh fruit', 'cprcode': '0226238', 'pr_ggcode': '191', 'pr_market': 'BANANA', 'pr_sucode1': 'CM1906', 'prtype': 'I', 'villa_category_l2_en': 'Fresh Produce', 'content_en': '0226238 BANANA banana,bananas,Cavendish Banana,Cavendish,,Fresh fruit', 'iprcode': '0226238', 'oprcode': '0226238', 'villa_category_l3_en': 'Fruits & Vegetable Local', 'pr_keyword_th': 'กล้วย,กล้วยหอม,กล้วยไข่,กล้วยออร์แกนิก,กล้วออร์แกนิค,Fresh fruit', 'pr_cgcode': '26', 'pr_code': '0226238', 'villa_category_l4_en': 'Local Fruit', 'pr_sa_method': '1', 'content_th': 'BANANA กล้วย,กล้วยหอม,กล้วยไข่,กล้วยออร์แกนิก,กล้วออร์แกนิค,Fresh fruit', 'pr_active': 'Y', 'pr_suref3': 'A', 'villa_category_l1_en': 'Fresh'}
+    {'pr_country_en': 'Thailand', 'pr_abb': 'BANANA', 'pr_engname': 'BANANA', 'pr_name': 'BANANA', 'pr_keyword_en': 'banana,bananas,Cavendish Banana,Cavendish,,Fresh fruit', 'cprcode': '0226238', 'villa_category_l2_en': 'Fresh Produce', 'content_en': '0226238 BANANA banana,bananas,Cavendish Banana,Cavendish,,Fresh fruit', 'iprcode': '0226238', 'oprcode': '0226238', 'villa_category_l3_en': 'Fruits & Vegetable Local', 'pr_keyword_th': 'กล้วย,กล้วยหอม,กล้วยไข่,กล้วยออร์แกนิก,กล้วออร์แกนิค,Fresh fruit', 'pr_code': '0226238', 'villa_category_l4_en': 'Local Fruit', 'content_th': 'BANANA กล้วย,กล้วยหอม,กล้วยไข่,กล้วยออร์แกนิก,กล้วออร์แกนิค,Fresh fruit', 'pr_active': 'Y', 'villa_category_l1_en': 'Fresh'}
 
 
 ## For a more complex requirement
@@ -60,4 +60,22 @@ _ = searcher.sortedSearch()
     454                  NaN  
     
     [455 rows x 4 columns]
+
+
+```python
+searcher2 = Search(searchTerm = 'dairy', key=USER, pw= PW , endpoint=searchEndpoint)
+result = searcher2.sortedSearch(queryOptions = queryOptions, size=10)
+```
+
+
+    ---------------------------------------------------------------------------
+
+    NameError                                 Traceback (most recent call last)
+
+    <ipython-input-8-671d6a83ad22> in <module>
+          1 searcher2 = Search(searchTerm = 'dairy', key=USER, pw= PW , endpoint=searchEndpoint)
+    ----> 2 result = searcher2.sortedSearch(queryOptions = queryOptions, size=10)
+    
+
+    NameError: name 'queryOptions' is not defined
 

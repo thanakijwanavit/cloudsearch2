@@ -7,8 +7,6 @@ import pandas as pd
 from pprint import pprint
 import boto3
 
-
-
 # Cell
 class Search:
   ''' a search class to return search result'''
@@ -38,16 +36,18 @@ class Search:
   def search(self,size = 50):
     return self.returnFullSearch(size=size)
 
-  def returnFullSearch(self, size = 50):
+  def returnFullSearch(self, queryOptions = '{}', size = 50):
     query = self.searchTerm
-    searchResults = self.cloudSearch.search(query = query, size=size)['hits']
+    searchResults = self.cloudSearch.search(query = query,
+                                            queryOptions = queryOptions,
+                                            size=size)['hits']
     results = []
     items = map(lambda x: x.get('fields'),searchResults.get('hit'))
     items =  map(lambda x: dict(zip(x.keys(),map(lambda y: y[0],x.values()))),items)
     return list(items)
 
-  def sortedSearch(self, size = 1000):
-    items = self.returnFullSearch(size = size)
+  def sortedSearch(self, queryOptions = '{}', size = 1000):
+    items = self.returnFullSearch(queryOptions = queryOptions, size = size)
     print(f'raw search result is {pd.DataFrame(items, columns= self.requiredFields)}')
     if not items: return []
     df =  self.sortResultsV2(items)
