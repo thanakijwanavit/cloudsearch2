@@ -47,7 +47,7 @@ nb_path: "cloudsearch.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="Search" class="doc_header"><code>class</code> <code>Search</code><a href="https://github.com/thanakijwanavit/cloudsearch/tree/master/cloudsearch/cloudsearch.py#L13" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Search</code>(<strong><code>searchTerm</code></strong>:<code>str</code>, <strong><code>key</code></strong>, <strong><code>pw</code></strong>, <strong><code>region</code></strong>=<em><code>'ap-southeast-1'</code></em>, <strong><code>endpoint</code></strong>=<em><code>''</code></em>, <strong><code>requiredFields</code></strong>=<em><code>['villa_category_l1_en', 'villa_category_l2_en', 'villa_category_l3_en', 'villa_category_l4_en']</code></em>)</p>
+<h2 id="Search" class="doc_header"><code>class</code> <code>Search</code><a href="https://github.com/thanakijwanavit/cloudsearch/tree/master/cloudsearch/cloudsearch.py#L11" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>Search</code>(<strong><code>searchTerm</code></strong>:<code>str</code>, <strong><code>key</code></strong>=<em><code>None</code></em>, <strong><code>pw</code></strong>=<em><code>None</code></em>, <strong><code>region</code></strong>=<em><code>'ap-southeast-1'</code></em>, <strong><code>endpoint</code></strong>=<em><code>''</code></em>, <strong><code>requiredFields</code></strong>=<em><code>['villa_category_l1_en', 'villa_category_l2_en', 'villa_category_l3_en', 'villa_category_l4_en']</code></em>)</p>
 </blockquote>
 <p>a search class to return search result</p>
 
@@ -128,6 +128,40 @@ nb_path: "cloudsearch.ipynb"
 
 <div class="output_text output_subarea output_execute_result">
 <pre>455</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">json</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>549306</pre>
 </div>
 
 </div>
@@ -255,40 +289,6 @@ nb_path: "cloudsearch.ipynb"
 9                   NaN  
 </pre>
 </div>
-</div>
-
-</div>
-</div>
-
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span> <span class="nn">json</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>692519</pre>
-</div>
-
 </div>
 
 </div>

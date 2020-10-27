@@ -87,8 +87,8 @@ init the search object then call sortedSearch()</p>
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>found 455 results, the first item is 
-{&#39;pr_country_en&#39;: &#39;Thailand&#39;, &#39;pr_abb&#39;: &#39;BANANA&#39;, &#39;pr_engname&#39;: &#39;BANANA&#39;, &#39;pr_name&#39;: &#39;BANANA&#39;, &#39;pr_keyword_en&#39;: &#39;banana,bananas,Cavendish Banana,Cavendish,,Fresh fruit&#39;, &#39;cprcode&#39;: &#39;0226238&#39;, &#39;villa_category_l2_en&#39;: &#39;Fresh Produce&#39;, &#39;content_en&#39;: &#39;0226238 BANANA banana,bananas,Cavendish Banana,Cavendish,,Fresh fruit&#39;, &#39;iprcode&#39;: &#39;0226238&#39;, &#39;oprcode&#39;: &#39;0226238&#39;, &#39;villa_category_l3_en&#39;: &#39;Fruits &amp; Vegetable Local&#39;, &#39;pr_keyword_th&#39;: &#39;กล้วย,กล้วยหอม,กล้วยไข่,กล้วยออร์แกนิก,กล้วออร์แกนิค,Fresh fruit&#39;, &#39;pr_code&#39;: &#39;0226238&#39;, &#39;villa_category_l4_en&#39;: &#39;Local Fruit&#39;, &#39;content_th&#39;: &#39;BANANA กล้วย,กล้วยหอม,กล้วยไข่,กล้วยออร์แกนิก,กล้วออร์แกนิค,Fresh fruit&#39;, &#39;pr_active&#39;: &#39;Y&#39;, &#39;villa_category_l1_en&#39;: &#39;Fresh&#39;}
+<pre>found 464 results, the first item is 
+{&#39;pr_country_en&#39;: &#39;Thailand&#39;, &#39;pr_abb&#39;: &#39;BANANA&#39;, &#39;pr_engname&#39;: &#39;BANANA&#39;, &#39;pr_name&#39;: &#39;BANANA&#39;, &#39;pr_online_name_en&#39;: &#39;BANANA&#39;, &#39;pr_keyword_en&#39;: &#39;banana,bananas,Cavendish Banana,Cavendish,,Fresh fruit&#39;, &#39;pr_online_name_th&#39;: &#39;BANANA&#39;, &#39;cprcode&#39;: &#39;0226238&#39;, &#39;villa_category_l2_en&#39;: &#39;Fresh Produce&#39;, &#39;content_en&#39;: &#39;0226238 BANANA banana,bananas,Cavendish Banana,Cavendish,,Fresh fruit&#39;, &#39;pr_name_th&#39;: &#39;BANANA&#39;, &#39;iprcode&#39;: &#39;0226238&#39;, &#39;oprcode&#39;: &#39;0226238&#39;, &#39;villa_category_l3_en&#39;: &#39;Fruits &amp; Vegetable Local&#39;, &#39;hema_name_en&#39;: &#39;BANANA&#39;, &#39;pr_keyword_th&#39;: &#39;กล้วย,กล้วยหอม,กล้วยไข่,กล้วยออร์แกนิก,กล้วออร์แกนิค,Fresh fruit&#39;, &#39;hema_name_th&#39;: &#39;BANANA&#39;, &#39;pr_name_en&#39;: &#39;BANANA&#39;, &#39;pr_code&#39;: &#39;0226238&#39;, &#39;villa_category_l4_en&#39;: &#39;Local Fruit&#39;, &#39;content_th&#39;: &#39;BANANA กล้วย,กล้วยหอม,กล้วยไข่,กล้วยออร์แกนิก,กล้วออร์แกนิค,Fresh fruit&#39;, &#39;pr_active&#39;: &#39;Y&#39;, &#39;villa_category_l1_en&#39;: &#39;Fresh&#39;}
 </pre>
 </div>
 </div>
@@ -133,11 +133,11 @@ init the search object then call sortedSearch()</p>
 3                  Fresh        Fresh Produce                    Bakery   
 4                  Fresh        Fresh Produce                    Bakery   
 ..                   ...                  ...                       ...   
-450                Fresh        Seafood Fresh                Crustacean   
-451                Fresh        Seafood Fresh                Crustacean   
-452                Fresh        Seafood Fresh                Crustacean   
-453                Fresh               Frozen                   Seafood   
-454                Fresh        Seafood Fresh             Local Seafood   
+459                Fresh        Seafood Fresh                Crustacean   
+460                Fresh        Seafood Fresh                Crustacean   
+461                Fresh        Seafood Fresh             Local Seafood   
+462                Fresh               Frozen                   Seafood   
+463                Fresh        Seafood Fresh             Local Seafood   
 
     villa_category_l4_en  
 0            Local Fruit  
@@ -146,13 +146,13 @@ init the search object then call sortedSearch()</p>
 3          Cake category  
 4         Pasty category  
 ..                   ...  
-450                Local  
-451                Local  
-452                Local  
-453                  NaN  
-454                  NaN  
+459                Local  
+460                Local  
+461                  NaN  
+462                  NaN  
+463                  NaN  
 
-[455 rows x 4 columns]
+[464 rows x 4 columns]
 </pre>
 </div>
 </div>
@@ -170,7 +170,12 @@ init the search object then call sortedSearch()</p>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">searcher2</span> <span class="o">=</span> <span class="n">Search</span><span class="p">(</span><span class="n">searchTerm</span> <span class="o">=</span> <span class="s1">&#39;dairy&#39;</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">USER</span><span class="p">,</span> <span class="n">pw</span><span class="o">=</span> <span class="n">PW</span> <span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="n">searchEndpoint</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="n">boostDict</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;fields&quot;</span><span class="p">:[</span><span class="s2">&quot;online_category_l1_en&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">queryOptions</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">boostDict</span><span class="p">)</span>
+<span class="n">searcher2</span> <span class="o">=</span> <span class="n">Search</span><span class="p">(</span><span class="n">searchTerm</span> <span class="o">=</span> <span class="s1">&#39;dairy&#39;</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">USER</span><span class="p">,</span> <span class="n">pw</span><span class="o">=</span> <span class="n">PW</span> <span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="n">searchEndpoint</span><span class="p">)</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">searcher2</span><span class="o">.</span><span class="n">sortedSearch</span><span class="p">(</span><span class="n">queryOptions</span> <span class="o">=</span> <span class="n">queryOptions</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 
@@ -183,16 +188,120 @@ init the search object then call sortedSearch()</p>
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-8-671d6a83ad22&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> searcher2 <span class="ansi-blue-fg">=</span> Search<span class="ansi-blue-fg">(</span>searchTerm <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">&#39;dairy&#39;</span><span class="ansi-blue-fg">,</span> key<span class="ansi-blue-fg">=</span>USER<span class="ansi-blue-fg">,</span> pw<span class="ansi-blue-fg">=</span> PW <span class="ansi-blue-fg">,</span> endpoint<span class="ansi-blue-fg">=</span>searchEndpoint<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>result <span class="ansi-blue-fg">=</span> searcher2<span class="ansi-blue-fg">.</span>sortedSearch<span class="ansi-blue-fg">(</span>queryOptions <span class="ansi-blue-fg">=</span> queryOptions<span class="ansi-blue-fg">,</span> size<span class="ansi-blue-fg">=</span><span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">)</span>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>raw search result is   villa_category_l1_en villa_category_l2_en villa_category_l3_en  \
+0                Fresh                Dairy     Chilled Beverage   
+1                Fresh                Dairy                 Milk   
+2                Fresh                Dairy               Cheese   
+3                Fresh                Dairy     Chilled Beverage   
+4                Fresh                Dairy                 Milk   
+5                  NaN                  NaN                  NaN   
+6                  NaN                  NaN                  NaN   
+7                Fresh                Dairy               Cheese   
+8                Fresh                Dairy               Yogurt   
+9                Fresh                Dairy               Yogurt   
 
-<span class="ansi-red-fg">NameError</span>: name &#39;queryOptions&#39; is not defined</pre>
+  villa_category_l4_en  
+0                  NaN  
+1                  NaN  
+2       Cheddar Cheese  
+3                  NaN  
+4                  NaN  
+5                  NaN  
+6                  NaN  
+7                  NaN  
+8               Yogurt  
+9        YogurtGranola  
+</pre>
 </div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">filterQuery</span> <span class="o">=</span> <span class="s2">&quot;(or &quot;</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;online_category_l1_en&#39;</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;:&#39;</span><span class="si">{</span><span class="n">cat</span><span class="si">}</span><span class="s2">&#39;&quot;</span> <span class="k">for</span> <span class="n">cat</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;Dairy&#39;</span><span class="p">]])</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span>
+<span class="n">searcher3</span> <span class="o">=</span> <span class="n">Search</span><span class="p">(</span><span class="n">searchTerm</span> <span class="o">=</span> <span class="s1">&#39;dairy&#39;</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">USER</span><span class="p">,</span> <span class="n">pw</span><span class="o">=</span> <span class="n">PW</span> <span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="n">searchEndpoint</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">searcher3</span><span class="o">.</span><span class="n">sortedSearch</span><span class="p">(</span><span class="n">filterQuery</span> <span class="o">=</span> <span class="n">filterQuery</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>raw search result is   villa_category_l1_en villa_category_l2_en villa_category_l3_en  \
+0                  NaN                  NaN                  NaN   
+1                Fresh                Dairy                 Milk   
+2                Fresh                Dairy                Cream   
+3                Fresh                Dairy                Cream   
+4                Fresh                Dairy               Yogurt   
+5                Fresh                Dairy               Yogurt   
+6                Fresh                Dairy               Yogurt   
+7                Fresh                Dairy               Yogurt   
+8                Fresh                Dairy               Yogurt   
+9                Fresh                Dairy               Yogurt   
+
+   villa_category_l4_en  
+0                   NaN  
+1                   NaN  
+2                   NaN  
+3                   NaN  
+4                   NaN  
+5                   NaN  
+6                   NaN  
+7                   NaN  
+8                   NaN  
+9                   NaN  
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">result</span><span class="p">[</span><span class="mi">9</span><span class="p">][</span><span class="s1">&#39;online_category_l1_en&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Dairy&#39;</pre>
+</div>
+
 </div>
 
 </div>
