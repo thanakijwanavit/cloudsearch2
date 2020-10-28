@@ -7,12 +7,10 @@ import pandas as pd
 from pprint import pprint
 import boto3
 
-
-
 # Cell
 class Search:
   ''' a search class to return search result'''
-  def __init__(self, searchTerm:str, key, pw, region = 'ap-southeast-1',
+  def __init__(self, searchTerm:str, key=None, pw=None, region = 'ap-southeast-1',
                endpoint = '',
                requiredFields = [
                  'villa_category_l1_en',
@@ -38,16 +36,24 @@ class Search:
   def search(self,size = 50):
     return self.returnFullSearch(size=size)
 
-  def returnFullSearch(self, size = 50):
+  def returnFullSearch(self, queryOptions = '{}', filterQuery = '', size = 50):
     query = self.searchTerm
-    searchResults = self.cloudSearch.search(query = query, size=size)['hits']
+    if filterQuery:
+      searchResults = self.cloudSearch.search(query = query,
+                                            filterQuery = filterQuery,
+                                            queryOptions = queryOptions,
+                                            size=size)['hits']
+    else:
+      searchResults = self.cloudSearch.search(query = query,
+                                            queryOptions = queryOptions,
+                                            size=size)['hits']
     results = []
     items = map(lambda x: x.get('fields'),searchResults.get('hit'))
     items =  map(lambda x: dict(zip(x.keys(),map(lambda y: y[0],x.values()))),items)
     return list(items)
 
-  def sortedSearch(self, size = 1000):
-    items = self.returnFullSearch(size = size)
+  def sortedSearch(self, queryOptions = '{}', filterQuery = '', size = 1000):
+    items = self.returnFullSearch(queryOptions = queryOptions, filterQuery = filterQuery, size = size)
     print(f'raw search result is {pd.DataFrame(items, columns= self.requiredFields)}')
     if not items: return []
     df =  self.sortResultsV2(items)
